@@ -1,0 +1,68 @@
+
+===========================
+SOC INCIDENT REPORT
+===========================
+
+
+Original Log:
+
+Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+--------------------------------
+Log Analysis:
+
+Log Agent analyzed: Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+--------------------------------
+Threat Analysis:
+
+Threat Agent: Possible Brute Force Attack
+
+
+--------------------------------
+Malware Analysis:
+
+Malware Agent: No malware indicators found.
+
+
+--------------------------------
+Severity:
+
+🟠 High
+
+
+--------------------------------
+Recommended Response:
+
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
+
+
+--------------------------------
+Coordinator AI Report:
+
+**Incident Report: Possible Brute Force Attack**
+
+**1. Incident Summary:**
+A possible brute force attack was detected from IP address 192.168.1.45, with multiple failed login attempts. This incident has been identified as a potential security threat to our system.
+
+**2. Threat Level:**
+The threat level for this incident is 🟠 High, indicating a significant potential impact on our security.
+
+**3. Malware Analysis:**
+The Malware Agent analysis did not find any malware indicators associated with this incident. The attack appears to be a brute force attempt to guess login credentials.
+
+**4. Response Recommendation:**
+To mitigate this threat, it is recommended to:
+- Block the suspicious IP address (192.168.1.45)
+- Lock the affected user account
+- Enable Multi-Factor Authentication (MFA) to prevent future unauthorized access attempts
+- Monitor login attempts for the next 24 hours to detect any further suspicious activity
+
+**5. Final Decision:**
+Based on the analysis and recommendations, the final decision is to implement the recommended response measures to protect our system from potential unauthorized access. The incident will be closely monitored for the next 24 hours to ensure the security of our system.
+

@@ -1,0 +1,70 @@
+
+===========================
+SOC INCIDENT REPORT
+===========================
+
+
+Original Log:
+
+Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+
+--------------------------------
+Log Analysis:
+
+Log Agent analyzed: Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+
+--------------------------------
+Threat Analysis:
+
+Threat Agent: Possible Brute Force Attack
+
+
+--------------------------------
+Malware Analysis:
+
+Malware Agent: No malware indicators found.
+
+
+--------------------------------
+Severity:
+
+🟠 High
+
+
+--------------------------------
+Recommended Response:
+
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
+
+
+--------------------------------
+Coordinator AI Report:
+
+**Incident Report: Possible Brute Force Attack**
+
+**1. Incident Summary:**
+A series of multiple failed login attempts were detected from IP address 192.168.1.45, indicating a possible brute force attack. Log and Threat Agents confirmed the suspicious activity, but no malware indicators were found.
+
+**2. Threat Level:**
+🟠 High - The repeated failed login attempts pose a significant threat to system security, warranting immediate attention and response.
+
+**3. Malware Analysis:**
+No malware indicators were detected by the Malware Agent, suggesting that the attack is likely focused on credential compromise rather than malware injection.
+
+**4. Response Recommendation:**
+To mitigate the threat, it is recommended to:
+- Block the suspicious IP address (192.168.1.45)
+- Lock the affected user account
+- Enable Multi-Factor Authentication (MFA) for enhanced security
+- Monitor login attempts for the next 24 hours to detect any further suspicious activity
+
+**5. Final Decision:**
+Based on the analysis and recommendations, the response measures outlined above will be implemented immediately to protect the system from potential unauthorized access and further brute force attempts. Continuous monitoring will be maintained to assess the effectiveness of these measures and adjust the response strategy as needed.
+

@@ -2,7 +2,7 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from agents.coordinator import coordinator
+from graph.runner import run_soc_workflow
 
 app = FastAPI(title="Multi-Agent SOC")
 
@@ -23,7 +23,7 @@ async def home(request: Request):
 @app.post("/", response_class=HTMLResponse)
 async def analyze(request: Request, security_log: str = Form(...)):
 
-    result = coordinator(security_log)
+    result = run_soc_workflow(security_log)
 
     return templates.TemplateResponse(
         request=request,

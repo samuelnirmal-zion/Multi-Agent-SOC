@@ -1,0 +1,59 @@
+
+===========================
+SOC INCIDENT REPORT
+===========================
+
+
+Original Log:
+
+User successfully logged into the system from the office network. No suspicious activity detected.
+
+
+
+--------------------------------
+Log Analysis:
+
+Log Agent analyzed: User successfully logged into the system from the office network. No suspicious activity detected.
+
+
+
+--------------------------------
+Threat Analysis:
+
+Threat Agent: No known threat detected
+
+
+
+--------------------------------
+Malware Analysis:
+
+No malware analysis required.
+
+
+
+--------------------------------
+Severity:
+
+🟢 Low
+
+
+
+--------------------------------
+Recommended Response:
+
+No immediate action required.
+
+
+
+--------------------------------
+Coordinator AI Report:
+
+Coordinator AI analysis not required for this event.
+
+
+
+--------------------------------
+Report Status:
+
+SOC report generated successfully.
+

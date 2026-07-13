@@ -1,0 +1,68 @@
+
+===========================
+SOC INCIDENT REPORT
+===========================
+
+
+Original Log:
+
+Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+--------------------------------
+Log Analysis:
+
+Log Agent analyzed: Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+
+--------------------------------
+Threat Analysis:
+
+Threat Agent: Possible Brute Force Attack
+
+
+--------------------------------
+Malware Analysis:
+
+Malware Agent: No malware indicators found.
+
+
+--------------------------------
+Severity:
+
+🟠 High
+
+
+--------------------------------
+Recommended Response:
+
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
+
+
+--------------------------------
+Coordinator AI Report:
+
+**Security Operations Center Incident Report**
+
+**Incident Summary:**
+A potential brute force attack was detected from IP address 192.168.1.45, with multiple failed login attempts recorded. The incident was identified by the Log Agent and confirmed by the Threat Agent.
+
+**Threat Level:**
+⚠️ High (🟠)
+
+**Malware Analysis:**
+No malware indicators were found by the Malware Agent, suggesting that the attack is likely focused on credential exploitation rather than malware deployment.
+
+**Response Recommendation:**
+To mitigate the threat, it is recommended to:
+1. Block the suspicious IP address (192.168.1.45) to prevent further login attempts.
+2. Lock the affected user account to prevent potential unauthorized access.
+3. Enable Multi-Factor Authentication (MFA) to enhance account security.
+4. Monitor login attempts for the next 24 hours to detect and respond to potential follow-up attacks.
+
+**Final Decision:**
+Based on the analysis and recommendations, it is decided to implement the proposed response measures to ensure the security of our systems and prevent potential breaches. The incident will be continuously monitored, and additional actions will be taken as necessary.
+

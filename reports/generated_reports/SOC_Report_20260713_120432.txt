@@ -1,0 +1,64 @@
+
+============================================================
+              MULTI-AGENT SOC REPORT
+============================================================
+
+====================================
+📝 LOG AGENT
+====================================
+
+Log Agent analyzed: There were 30 failed login attempts from IP address 192.168.1.100 within 2 minutes. This indicates a possible brute force attack against the administrator account.
+
+
+====================================
+🛡️ THREAT AGENT
+====================================
+
+Threat Agent: Possible Brute Force Attack
+
+
+====================================
+🦠 MALWARE AGENT
+====================================
+
+Malware Agent: No malware indicators found.
+
+
+====================================
+🚨 RESPONSE AGENT
+====================================
+
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
+
+
+====================================
+🚦 SEVERITY AGENT
+====================================
+
+🟠 High
+
+
+====================================
+🤖 COORDINATOR AGENT
+====================================
+
+**SOC Report**
+
+1. **Incident Summary**: A possible brute force attack was detected with 30 failed login attempts from IP address 192.168.1.100 within 2 minutes, targeting the administrator account.
+
+2. **Threat Level**: High (🟠)
+
+3. **Affected Asset**: Administrator account
+
+4. **Malware Analysis**: No malware indicators were found.
+
+5. **Response Recommendation**: 
+   - Block the suspicious IP address (192.168.1.100).
+   - Lock the affected user account.
+   - Enable Multi-Factor Authentication (MFA).
+   - Monitor login attempts for the next 24 hours.
+
+6. **Final Decision**: Implement the recommended response actions to mitigate the potential brute force attack and ensure the security of the administrator account.

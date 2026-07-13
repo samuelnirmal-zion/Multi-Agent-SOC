@@ -1,0 +1,30 @@
+
+===========================
+SOC INCIDENT REPORT
+===========================
+
+Original Log:
+Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+--------------------------------
+Log Analysis:
+Log Agent analyzed: Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.
+
+--------------------------------
+Threat Analysis:
+Threat Agent: Possible Brute Force Attack
+
+--------------------------------
+Malware Analysis:
+Malware Agent: No malware indicators found.
+
+--------------------------------
+Severity:
+🟠 High
+
+--------------------------------
+Recommended Response:
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
