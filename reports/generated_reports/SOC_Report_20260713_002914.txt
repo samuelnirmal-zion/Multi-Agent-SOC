@@ -1,0 +1,65 @@
+
+============================================================
+              MULTI-AGENT SOC REPORT
+============================================================
+
+====================================
+📝 LOG AGENT
+====================================
+
+Log Agent analyzed: There were 30 failed login attempts from IP 192.168.1.100 within 2 minutes.
+
+
+
+====================================
+🛡️ THREAT AGENT
+====================================
+
+Threat Agent: Possible Brute Force Attack
+
+
+====================================
+🦠 MALWARE AGENT
+====================================
+
+Malware Agent: No malware indicators found.
+
+
+====================================
+🚨 RESPONSE AGENT
+====================================
+
+• Block the suspicious IP address.
+• Lock the affected user account.
+• Enable Multi-Factor Authentication (MFA).
+• Monitor login attempts for the next 24 hours.
+
+
+====================================
+🚦 SEVERITY AGENT
+====================================
+
+🟠 High
+
+
+====================================
+🤖 COORDINATOR AGENT
+====================================
+
+**SOC Report**
+
+1. **Incident Summary**: 30 failed login attempts from IP 192.168.1.100 were detected within a 2-minute timeframe, indicating a potential security threat.
+
+2. **Threat Level**: 🟠 High
+
+3. **Affected Asset**: The affected user account associated with the targeted login attempts.
+
+4. **Malware Analysis**: No malware indicators were found by the Malware Agent.
+
+5. **Response Recommendation**: 
+   - Block the suspicious IP address (192.168.1.100).
+   - Lock the affected user account.
+   - Enable Multi-Factor Authentication (MFA).
+   - Monitor login attempts for the next 24 hours.
+
+6. **Final Decision**: Implement the recommended response actions to mitigate the potential Brute Force Attack and prevent further unauthorized access attempts.

@@ -12,17 +12,23 @@ templates = Jinja2Templates(directory="frontend")
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
-        request,
-        "index.html",
-        {"response": ""},
+        request=request,
+        name="index.html",
+        context={
+            "result": ""
+        }
     )
 
 
 @app.post("/", response_class=HTMLResponse)
 async def analyze(request: Request, security_log: str = Form(...)):
-    response = coordinator(security_log)
+
+    result = coordinator(security_log)
+
     return templates.TemplateResponse(
-        request,
-        "index.html",
-        {"response": response},
+        request=request,
+        name="index.html",
+        context={
+            "result": result
+        }
     )
