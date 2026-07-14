@@ -1,9 +1,13 @@
 import os
+from datetime import datetime
+from uuid import uuid4
+
 from dotenv import load_dotenv
 
 from agents.log_agent import analyze_log
 from agents.threat_agent import analyze_threat
 from agents.malware_agent import analyze_malware
+from agents.parser import parse_log
 from agents.response_agent import response_action
 from agents.severity_agent import analyze_severity
 
@@ -68,7 +72,10 @@ def coordinator(message):
     # STEP 4 : RESPONSE AGENT
     # ============================================
 
-    response_analysis = response_action(threat_analysis)
+    response_analysis = response_action(
+        threat_analysis,
+        message
+    )
 
     # ============================================
     # STEP 5 : SEVERITY AGENT
@@ -158,55 +165,102 @@ Response Recommendation
         except Exception:
 
             ai_response = _build_fallback_response(message)
-                # ============================================
+                incident = parse_log(message)
+
+    incident_id = "SOC-" + uuid4().hex[:8].upper()
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # ============================================
     # STEP 7 : BUILD FINAL REPORT
     # ============================================
 
     final_report = f"""
 ============================================================
-              MULTI-AGENT SOC REPORT
+            AI POWERED SOC INCIDENT REPORT
 ============================================================
 
-====================================
-📝 LOG AGENT
-====================================
+Incident ID        : {incident_id}
+
+Detection Time     : {timestamp}
+
+Report Status      : ACTIVE
+
+============================================================
+EVENT INFORMATION
+============================================================
+
+Hostname           : {incident["hostname"]}
+
+Username           : {incident["user"]}
+
+Source IP          : {incident["source_ip"]}
+
+Destination IP     : {incident["destination_ip"]}
+
+Process            : {incident["process"]}
+
+CPU Usage          : {incident["cpu"]}
+
+Files Modified     : {incident["files_modified"]}
+
+============================================================
+ORIGINAL SECURITY EVENT
+============================================================
+
+{message}
+
+============================================================
+LOG ANALYSIS
+============================================================
 
 {log_analysis}
 
-
-====================================
-🛡️ THREAT AGENT
-====================================
+============================================================
+THREAT ANALYSIS
+============================================================
 
 {threat_analysis}
 
-
-====================================
-🦠 MALWARE AGENT
-====================================
+============================================================
+MALWARE ANALYSIS
+============================================================
 
 {malware_analysis}
 
-
-====================================
-🚨 RESPONSE AGENT
-====================================
-
-{response_analysis}
-
-
-====================================
-🚦 SEVERITY AGENT
-====================================
+============================================================
+SEVERITY ASSESSMENT
+============================================================
 
 {severity}
 
+============================================================
+RECOMMENDED RESPONSE
+============================================================
 
-====================================
-🤖 COORDINATOR AGENT
-====================================
+{response_analysis}
+
+============================================================
+AI SOC ANALYST SUMMARY
+============================================================
 
 {ai_response}
+
+============================================================
+INCIDENT STATUS
+============================================================
+
+Status
+
+✔ Investigation Completed
+
+✔ Threat Classified
+
+✔ Response Generated
+
+✔ Report Saved
+
+============================================================
 """
 
     # ============================================
@@ -220,19 +274,15 @@ Response Recommendation
 
     final_report += f"""
 
-====================================
-📁 REPORT STATUS
-====================================
+Report Saved Successfully
 
-✅ SOC Report saved successfully.
-
-Report Location:
+Location
 
 {report_path}
 
-====================================
+============================================================
 END OF REPORT
-====================================
+============================================================
 """
 
     # ============================================

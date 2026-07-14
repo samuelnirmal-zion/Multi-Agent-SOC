@@ -6,6 +6,7 @@ from agents.malware_agent import analyze_malware
 from agents.severity_agent import analyze_severity
 from agents.response_agent import response_action
 from reports.report_generator import save_report
+from history.history_manager import save_incident
 
 import os
 from dotenv import load_dotenv
@@ -305,6 +306,18 @@ SOC report generated successfully.
     state["report"] = report
 
     state["report_path"] = filepath
+
+        # Save incident history
+
+    incident = {
+        "log": state["log"],
+        "threat": state["threat"],
+        "severity": state["severity"],
+        "response": state["response"]
+    }
+
+
+    save_incident(incident)
 
 
 

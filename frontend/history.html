@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SOC Incident History</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f6f8;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+
+.card {
+
+    background:white;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #ccc;
+
+}
+
+
+.high {
+    color:orange;
+    font-weight:bold;
+}
+
+
+.low {
+    color:green;
+    font-weight:bold;
+}
+
+
+.critical {
+    color:red;
+    font-weight:bold;
+}
+
+
+button {
+
+    padding:10px;
+    background:#222;
+    color:white;
+    border:none;
+    border-radius:5px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+🛡️ SOC Incident History Dashboard
+</h1>
+
+
+<a href="/">
+<button>
+Back to Analyzer
+</button>
+</a>
+
+
+<div id="incidents">
+
+Loading incidents...
+
+</div>
+
+
+
+<script>
+
+
+fetch("/api/history")
+
+.then(response => response.json())
+
+.then(data => {
+
+
+let container =
+document.getElementById("incidents");
+
+
+container.innerHTML="";
+
+
+data.forEach(item => {
+
+
+container.innerHTML += `
+
+
+<div class="card">
+
+
+<h3>
+Incident
+</h3>
+
+
+<p>
+<b>Log:</b>
+${item.log}
+</p>
+
+
+<p>
+<b>Threat:</b>
+${item.threat}
+</p>
+
+
+<p>
+<b>Severity:</b>
+${item.severity}
+</p>
+
+
+<p>
+<b>Response:</b>
+${item.response}
+</p>
+
+
+<p>
+<b>Date:</b>
+${item.timestamp}
+</p>
+
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

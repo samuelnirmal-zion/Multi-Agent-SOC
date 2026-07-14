@@ -1,50 +1,88 @@
-def response_action(threat_result):
-    """
-    Suggests the appropriate response based on the detected threat.
-    """
+from agents.parser import parse_log
+
+
+def response_action(threat_result, log=""):
+
+    data = parse_log(log)
 
     threat = threat_result.lower()
 
-    # Brute Force Response
-    if "brute force" in threat:
-        return (
-            "• Block the suspicious IP address.\n"
-            "• Lock the affected user account.\n"
-            "• Enable Multi-Factor Authentication (MFA).\n"
-            "• Monitor login attempts for the next 24 hours."
-        )
+    actions = []
 
-    # Malware Response
-    elif "malware" in threat:
-        return (
-            "• Isolate the infected device from the network.\n"
-            "• Run a complete antivirus scan.\n"
-            "• Remove malicious files.\n"
-            "• Investigate possible lateral movement."
-        )
+    # ---------------------------------
+    # RANSOMWARE
+    # ---------------------------------
 
-    # Phishing Response
+    if "ransomware" in threat:
+
+        actions.extend([
+            f"Immediately isolate {data['hostname']} from the corporate network.",
+            f"Terminate process {data['process']}.",
+            f"Disable account {data['user']}.",
+            f"Block source IP {data['source_ip']}.",
+            "Preserve RAM and disk image for forensic investigation.",
+            "Collect Indicators of Compromise (IoCs).",
+            "Scan neighbouring endpoints using EDR.",
+            "Restore encrypted files from secure backups.",
+            "Notify SOC Manager and Incident Response Team."
+        ])
+
+    # ---------------------------------
+    # BRUTE FORCE
+    # ---------------------------------
+
+    elif "brute force" in threat:
+
+        actions.extend([
+            f"Block source IP {data['source_ip']}.",
+            f"Temporarily disable account {data['user']}.",
+            "Force password reset.",
+            "Enable Multi-Factor Authentication (MFA).",
+            "Review authentication logs.",
+            "Monitor login attempts for the next 24 hours."
+        ])
+
+    # ---------------------------------
+    # PHISHING
+    # ---------------------------------
+
     elif "phishing" in threat:
-        return (
-            "• Reset the user's password.\n"
-            "• Scan the mailbox for malicious emails.\n"
-            "• Block the sender's email address.\n"
-            "• Conduct user awareness training."
-        )
 
-    # Unauthorized Access Response
-    elif "unauthorized" in threat:
-        return (
-            "• Disable the compromised account.\n"
-            "• Review audit logs.\n"
-            "• Force password reset.\n"
-            "• Investigate all recent activities."
-        )
+        actions.extend([
+            "Quarantine suspicious emails.",
+            "Block sender domain.",
+            f"Reset password for {data['user']}.",
+            "Scan workstation for malware.",
+            "Conduct user awareness verification."
+        ])
 
-    # Default Response
+    # ---------------------------------
+    # MALWARE
+    # ---------------------------------
+
+    elif "malware" in threat:
+
+        actions.extend([
+            "Disconnect affected endpoint.",
+            "Perform full antivirus scan.",
+            "Remove malicious binaries.",
+            "Review persistence mechanisms.",
+            "Monitor network communications."
+        ])
+
+    # ---------------------------------
+    # DEFAULT
+    # ---------------------------------
+
     else:
-        return (
-            "• Continue monitoring the environment.\n"
-            "• Review system logs.\n"
-            "• No immediate action required."
-        )
+
+        actions.extend([
+            "Continue monitoring.",
+            "Review SIEM alerts.",
+            "No immediate containment required."
+        ])
+
+    return (
+        "RECOMMENDED RESPONSE\n\n"
+        + "\n".join([f"✓ {item}" for item in actions])
+    )

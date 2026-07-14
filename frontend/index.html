@@ -1,269 +1,771 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>AI SOC Assistant</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
 
-        .header {
-            background: #111827;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+<title>AI Powered SOC Assistant</title>
 
-        .header p {
-            margin-top: 10px;
-            font-size: 16px;
-        }
+<style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
 
-        .container {
-            width: 85%;
-            margin: 30px auto;
-        }
+body{
 
+background:#eef3f9;
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-        }
+color:#1f2937;
 
+}
 
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 15px;
-            font-size: 15px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            resize: none;
-        }
+.hero{
 
+background:linear-gradient(135deg,#0f172a,#1e40af);
 
-        button {
-            margin-top: 15px;
-            background: #2563eb;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+padding:55px;
 
+text-align:center;
 
-        button:hover {
-            background: #1d4ed8;
-        }
+color:white;
 
+box-shadow:0 8px 30px rgba(0,0,0,.25);
 
-        .result {
-            white-space: pre-line;
-            background: #111827;
-            color: #e5e7eb;
-            padding: 20px;
-            border-radius: 10px;
-            line-height: 1.6;
-            font-family: monospace;
-        }
+}
 
+.hero h1{
 
-        .agents {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
+font-size:52px;
 
+font-weight:700;
 
-        .agent-box {
-            background: #ecfdf5;
-            border-left: 5px solid #10b981;
-            padding: 15px;
-            border-radius: 8px;
-        }
+letter-spacing:1px;
 
+}
 
-        .severity {
-            font-size: 22px;
-            font-weight: bold;
-        }
+.hero-badge{
 
+display:inline-block;
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: gray;
-        }
+margin-top:20px;
 
+padding:10px 25px;
 
-        @media(max-width:800px){
+border-radius:40px;
 
-            .agents{
-                grid-template-columns:1fr;
-            }
+background:rgba(255,255,255,.15);
 
-            .container{
-                width:90%;
-            }
-        }
+color:white;
 
-    </style>
+font-size:16px;
+
+font-weight:600;
+
+}
+
+.container{
+
+width:92%;
+
+max-width:1450px;
+
+margin:auto;
+
+margin-top:35px;
+
+}
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.card h2{
+
+font-size:36px;
+
+margin-bottom:15px;
+
+color:#2563eb;
+
+}
+
+.card p{
+
+font-size:18px;
+
+color:#555;
+
+line-height:1.7;
+
+}
+
+.analysis{
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+}
+
+.analysis h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:#1e3a8a;
+
+}
+
+textarea{
+
+width:100%;
+
+height:220px;
+
+border-radius:15px;
+
+border:2px solid #dbeafe;
+
+padding:20px;
+
+font-size:18px;
+
+transition:.3s;
+
+resize:none;
+
+}
+
+textarea:focus{
+
+border-color:#2563eb;
+
+outline:none;
+
+box-shadow:0 0 15px rgba(37,99,235,.25);
+
+}
+
+button{
+
+margin-top:25px;
+
+background:linear-gradient(90deg,#2563eb,#1d4ed8);
+
+color:white;
+
+border:none;
+
+padding:15px 35px;
+
+border-radius:12px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+.result, .report{
+
+background:#0f172a;
+
+color:#f8fafc;
+
+border-radius:15px;
+
+padding:30px;
+
+font-size:15px;
+
+line-height:1.8;
+
+overflow:auto;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+font-family:Consolas,monospace;
+
+white-space:pre-wrap;
+
+}
+
+..agent-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+margin-top:25px;
+
+}
+
+.agent-card{
+
+background:white;
+
+border-radius:18px;
+
+padding:30px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+border-left:6px solid #22c55e;
+
+transition:.35s;
+
+}
+
+.agent-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+
+.agent-card h3{
+
+color:#1e3a8a;
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.agent-card p{
+
+color:#334155;
+
+line-height:1.7;
+
+font-size:18px;
+
+}
+
+.status{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:10px 22px;
+
+border-radius:30px;
+
+font-size:16px;
+
+font-weight:bold;
+
+background:#dcfce7;
+
+color:#15803d;
+
+transition:.3s;
+
+}
+
+.status.active{
+
+background:#dcfce7;
+
+color:#15803d;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+box-shadow:0 0 0 rgba(34,197,94,.5);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+box-shadow:0 0 15px rgba(34,197,94,.4);
+
+}
+
+100%{
+
+transform:scale(1);
+
+box-shadow:0 0 0 rgba(34,197,94,.5);
+
+}
+
+}
+
+.footer{
+
+margin-top:45px;
+
+padding:25px;
+
+text-align:center;
+
+font-size:16px;
+
+color:#6b7280;
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.analysis h2{
+
+font-size:30px;
+
+}
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.agent-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
 
 </head>
 
-
 <body>
 
+<div class="hero">
 
-<div class="header">
-
-    <h1>🛡️ AI Powered SOC Assistant</h1>
-
-    <p>
-        Multi-Agent Cybersecurity Threat Detection System
-    </p>
+<h1>🛡️ AI Powered SOC Assistant</h1>
+<p>Multi-Agent SOC</p>
+<div class="hero-badge">Enterprise Security Operations Center</div>
 
 </div>
-
-
 
 <div class="container">
 
+<div class="dashboard">
 
 <div class="card">
 
+<h2>📄</h2>
 
-<h2>Security Log Analysis</h2>
-
-
-<form method="post">
-
-
-<textarea 
-name="security_log"
-placeholder="Paste security event log here..."></textarea>
-
-
-<br>
-
-
-<button type="submit">
-Analyze Threat
-</button>
-
-
-</form>
-
+<p><strong>Log Analysis</strong><br>Analyze security logs using AI.</p>
 
 </div>
 
+<div class="card">
 
+<h2>🤖</h2>
 
+<p><strong>6 AI Agents</strong><br>Collaborative multi-agent workflow.</p>
 
-
-{% if result %}
-
+</div>
 
 <div class="card">
 
+<h2>⚡</h2>
+
+<p><strong>AI Decision</strong><br>Automated threat response.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🛡️</h2>
+
+<p><strong>Threat Detection</strong><br>Detect cyber attacks instantly.</p>
+
+</div>
+
+</div>
+
+<div class="analysis">
+
+<h2>Security Log Analysis</h2>
+
+<form method="POST">
+
+<textarea
+name="security_log"
+placeholder="Paste Firewall, VPN, Windows Event Logs or any security log here..."
+required></textarea>
+
+<br>
+
+<button type="submit">
+
+🚀 Analyze Threat
+
+</button>
+
+</form>
+
+</div>
+{% if result %}
+
+<div class="analysis">
 
 <h2>🚨 SOC Incident Report</h2>
 
-
-<div class="result">
+<div class="report">
 
 {{ result }}
 
 </div>
 
+</div>
+
+<div class="analysis">
+
+<h2>🤖 AI Agent Execution Dashboard</h2>
+
+<div class="agent-grid">
+
+<div class="agent-card">
+
+<h3>📄 Log Agent</h3>
+
+<p>
+Collects and analyzes raw security logs from the user.
+</p>
+
+<div class="status active">
+
+⚡ Active
 
 </div>
 
+</div>
 
+<div class="agent-card">
 
+<h3>🎯 Threat Agent</h3>
+
+<p>
+Detects brute force attacks, phishing attempts, ransomware activity and suspicious behavior.
+</p>
+
+<div class="status active">
+
+⚡ Active
+
+</div>
+
+</div>
+
+<div class="agent-card">
+
+<h3>🦠 Malware Agent</h3>
+
+<p>
+Analyzes logs for malware indicators and malicious file activity.
+</p>
+
+<div class="status active">
+
+⚡ Active
+
+</div>
+
+</div>
+
+<div class="agent-card">
+
+<h3>⚠ Severity Agent</h3>
+
+<p>
+Calculates the severity level of the detected security incident.
+</p>
+
+<div class="status active">
+
+⚡ Active
+
+</div>
+
+</div>
+
+<div class="agent-card">
+
+<h3>🛡 Response Agent</h3>
+
+<p>
+Generates recommended mitigation steps for the SOC analyst.
+</p>
+
+<div class="status active">
+
+⚡ Active
+
+</div>
+
+</div>
+
+<div class="agent-card">
+
+<h3>🧠 Coordinator Agent</h3>
+
+<p>
+Combines outputs from all AI agents and generates the final SOC Incident Report.
+</p>
+
+<div class="status active">
+
+⚡ Active
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endif %}
+<div class="dashboard">
 
 <div class="card">
 
+<h2>6</h2>
 
-<h2>🤖 Agent Execution Status</h2>
+<p>
 
+<b>AI Agents</b>
 
-<div class="agents">
+<br><br>
 
+Working together using LangGraph workflow.
 
-<div class="agent-box">
-✅ Log Agent<br>
-Analyzes security logs
-</div>
-
-
-<div class="agent-box">
-✅ Threat Agent<br>
-Detects possible attacks
-</div>
-
-
-<div class="agent-box">
-✅ Malware Agent<br>
-Checks malware indicators
-</div>
-
-
-<div class="agent-box">
-✅ Severity Agent<br>
-Calculates risk level
-</div>
-
-
-<div class="agent-box">
-✅ Response Agent<br>
-Suggests mitigation
-</div>
-
-
-<div class="agent-box">
-✅ Coordinator Agent<br>
-Creates final AI report
-</div>
-
+</p>
 
 </div>
 
+<div class="card">
+
+<h2>100%</h2>
+
+<p>
+
+<b>Automation</b>
+
+<br><br>
+
+Threat detection and report generation.
+
+</p>
 
 </div>
 
+<div class="card">
 
-{% endif %}
+<h2>24/7</h2>
 
+<p>
 
+<b>Monitoring</b>
+
+<br><br>
+
+Designed for continuous SOC monitoring.
+
+</p>
 
 </div>
 
+<div class="card">
 
+<h2>AI</h2>
 
-<div class="footer">
+<p>
 
-AI Multi-Agent SOC System | LangGraph + FastAPI
+<b>Decision Engine</b>
+
+<br><br>
+
+Generates intelligent incident reports.
+
+</p>
 
 </div>
 
+</div>
 
+<div class="analysis">
+
+<h2>💡 Project Highlights</h2>
+
+<div class="agent-grid">
+
+<div class="agent">
+
+<h3>⚡ Fast Detection</h3>
+
+<p>
+
+Instantly analyzes security logs and detects possible cyber threats.
+
+</p>
+
+</div>
+
+<div class="agent">
+
+<h3>🤖 Multi-Agent AI</h3>
+
+<p>
+
+Six specialized AI agents collaborate using LangGraph orchestration.
+
+</p>
+
+</div>
+
+<div class="agent">
+
+<h3>📄 Automated Reports</h3>
+
+<p>
+
+Generates structured SOC Incident Reports with severity and recommendations.
+
+</p>
+
+</div>
+
+<div class="agent">
+
+<h3>🛡 Enterprise Ready</h3>
+
+<p>
+
+Can be integrated with SIEM platforms such as Splunk and Microsoft Sentinel.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+<footer class="footer">
+
+<hr style="margin-bottom:25px;border:none;border-top:1px solid #d1d5db;">
+
+<h2 style="color:#1e3a8a;">
+
+🛡 AI Powered SOC Assistant
+
+</h2>
+
+<br>
+
+<p>
+
+Built using
+
+<b>Python</b> •
+
+<b>FastAPI</b> •
+
+<b>LangGraph</b> •
+
+<b>Groq LLM</b> •
+
+<b>HTML</b> •
+
+<b>CSS</b>
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 AI Powered SOC Assistant
+
+</p>
+
+</footer>
+
+</div>
 
 </body>
 

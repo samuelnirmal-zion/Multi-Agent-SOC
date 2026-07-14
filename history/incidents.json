@@ -1,0 +1,191 @@
+[
+    {
+        "log": "Multiple failed login attempts detected from IP 192.168.1.45. Possible brute force attack.",
+        "threat": "Threat Agent: Possible Brute Force Attack",
+        "severity": "\ud83d\udfe0 High",
+        "response": "\u2022 Block the suspicious IP address.\n\u2022 Lock the affected user account.\n\u2022 Enable Multi-Factor Authentication (MFA).\n\u2022 Monitor login attempts for the next 24 hours.",
+        "timestamp": "2026-07-13 15:38:16"
+    },
+    {
+        "log": "2026-07-13 14:22:54\r\n\r\n[NETWORK SECURITY ALERT]\r\n\r\nSource Host: FINANCE-SERVER-01\r\nDestination IP: 203.56.18.92\r\n\r\nEvent:\r\n- 12 GB of data transferred externally.\r\n- Transfer occurred outside business hours.\r\n- Destination IP not previously observed.\r\n- Sensitive payroll and employee files accessed.\r\n- Multiple compressed archive files created before transfer.\r\n\r\nFirewall:\r\nOutbound traffic allowed.\r\n\r\nRecommended Action:\r\nBlock destination IP and investigate possible data exfiltration.",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 16:22:35"
+    },
+    {
+        "log": "Multiple failed login attempts detected from IP 192.168.1.45 within 5 minutes. User account admin targeted. Possible brute force attack.",
+        "threat": "Threat Agent: Possible Brute Force Attack",
+        "severity": "\ud83d\udfe0 High",
+        "response": "\u2022 Block the suspicious IP address.\n\u2022 Lock the affected user account.\n\u2022 Enable Multi-Factor Authentication (MFA).\n\u2022 Monitor login attempts for the next 24 hours.",
+        "timestamp": "2026-07-13 16:26:52"
+    },
+    {
+        "log": "Multiple failed login attempts detected from IP 192.168.1.45 within 5 minutes. User account admin targeted. Possible brute force attack.",
+        "threat": "Threat Agent: Possible Brute Force Attack",
+        "severity": "\ud83d\udfe0 High",
+        "response": "\u2022 Block the suspicious IP address.\n\u2022 Lock the affected user account.\n\u2022 Enable Multi-Factor Authentication (MFA).\n\u2022 Monitor login attempts for the next 24 hours.",
+        "timestamp": "2026-07-13 17:10:31"
+    },
+    {
+        "log": "Suspicious login",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 18:17:46"
+    },
+    {
+        "log": "Suspicious login",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 18:18:50"
+    },
+    {
+        "log": "Critical Security Alert:\r\n\r\nThe firewall detected over 600 failed login attempts from IP 185.92.18.44 targeting the administrator account.\r\n\r\nImmediately after authentication succeeded, an unknown executable named ransomware.exe began encrypting files inside the Finance folder.\r\n\r\nWindows Defender identified suspicious malware behavior while outbound traffic increased to an unknown external server.\r\n\r\nPossible ransomware infection combined with unauthorized access has been detected.",
+        "threat": "Threat Agent: Possible Brute Force Attack",
+        "severity": "\ud83d\udd34 Critical",
+        "response": "\u2022 Block the suspicious IP address.\n\u2022 Lock the affected user account.\n\u2022 Enable Multi-Factor Authentication (MFA).\n\u2022 Monitor login attempts for the next 24 hours.",
+        "timestamp": "2026-07-13 18:19:46"
+    },
+    {
+        "log": "\r\nEndpoint detected rapid encryption of more than 200 files. Unknown executable launched from Downloads folder. Ransom note detected on desktop.",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 18:25:31"
+    },
+    {
+        "log": "Windows Defender Alert:\r\nProcess: encryptor.exe\r\nFiles Modified: 1850\r\nExtensions Changed: .locked\r\nShadow Copies Deleted\r\nCommand Executed:\r\nvssadmin delete shadows /all /quiet",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 20:04:47"
+    },
+    {
+        "log": "Email Gateway Alert\r\n\r\nFrom: support@micr0soft-security.com\r\nTo: employee@company.com\r\nSubject: Urgent Password Reset\r\n\r\nThe email contains a malicious attachment:\r\nInvoice_Password_Update.zip\r\n\r\nURL:\r\nhttp://login-microsoft-security-update.com\r\n",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-13 20:05:11"
+    },
+    {
+        "log": "Email Gateway Alert\r\n\r\nFrom: support@micr0soft-security.com\r\nTo: employee@company.com\r\nSubject: Urgent Password Reset\r\n\r\nThe email contains a malicious attachment:\r\nInvoice_Password_Update.zip\r\n\r\nURL:\r\nhttp://login-microsoft-security-update.com\r\n",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-14 00:56:08"
+    },
+    {
+        "log": "Employee attempted to copy confidential financial documents to an unauthorized USB device after office hours.",
+        "threat": "Threat Agent: No known threat detected",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-14 00:56:13"
+    },
+    {
+        "log": "Employee attempted to copy confidential financial documents to an unauthorized USB device after office hours.",
+        "threat": "Threat Agent: Unauthorized Access Attempt",
+        "severity": "\ud83d\udfe0 High",
+        "response": "\u2022 Disable the compromised account.\n\u2022 Review audit logs.\n\u2022 Force password reset.\n\u2022 Investigate all recent activities.",
+        "timestamp": "2026-07-14 11:32:39"
+    },
+    {
+        "log": "Employee received a phishing email requesting Microsoft 365 credentials. The email originated from an unknown domain.",
+        "threat": "Threat Agent: Phishing Attempt Detected",
+        "severity": "\ud83d\udfe1 Medium",
+        "response": "\u2022 Reset the user's password.\n\u2022 Scan the mailbox for malicious emails.\n\u2022 Block the sender's email address.\n\u2022 Conduct user awareness training.",
+        "timestamp": "2026-07-14 11:33:21"
+    },
+    {
+        "log": "Employee received a phishing email requesting Microsoft 365 credentials. The email originated from an unknown domain.",
+        "threat": "Threat Agent: Phishing Attempt Detected",
+        "severity": "\ud83d\udfe1 Medium",
+        "response": "\u2022 Reset the user's password.\n\u2022 Scan the mailbox for malicious emails.\n\u2022 Block the sender's email address.\n\u2022 Conduct user awareness training.",
+        "timestamp": "2026-07-14 11:39:01"
+    },
+    {
+        "log": "Timestamp=2026-07-14T09:12:42\r\n\r\nHostname=HR-PC-14\r\n\r\nUser=Alice\r\n\r\nProcess=encrypt.exe\r\n\r\nBehavior=Mass file encryption detected\r\n\r\nFiles Modified=1423\r\n\r\nExtension=.locked\r\n\r\nAction=Encryption in progress",
+        "threat": "Threat Agent: Ransomware Attack Detected",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:40:35"
+    },
+    {
+        "log": "Timestamp=2026-07-14T09:12:42\r\n\r\nHostname=HR-PC-14\r\n\r\nUser=Alice\r\n\r\nProcess=encrypt.exe\r\n\r\nBehavior=Mass file encryption detected\r\n\r\nFiles Modified=1423\r\n\r\nExtension=.locked\r\n\r\nAction=Encryption in progress",
+        "threat": "Threat Agent: Ransomware Attack Detected",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:51:00"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "Threat Agent: Ransomware Attack Detected",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:51:15"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:52:38"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:52:41"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:53:50"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\ud83d\udfe2 Low",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:53:56"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\nOverall Severity : \ud83d\udd34 Critical\n\nRisk Score       : 80/100\n\nReasons\n\n\u2022 Ransomware behaviour detected\n\u2022 High CPU usage\n\u2022 Mass file modification\n",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:54:58"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\nOverall Severity : \ud83d\udd34 Critical\n\nRisk Score       : 80/100\n\nReasons\n\n\u2022 Ransomware behaviour detected\n\u2022 High CPU usage\n\u2022 Mass file modification\n",
+        "response": "\u2022 Continue monitoring the environment.\n\u2022 Review system logs.\n\u2022 No immediate action required.",
+        "timestamp": "2026-07-14 11:55:16"
+    },
+    {
+        "log": "Timestamp=2026-07-14 09:12:42\r\nHostname=HR-PC-14\r\nUser=Alice\r\nSource_IP=185.77.21.5\r\nDestination_IP=10.10.1.22\r\nProcess=encrypt.exe\r\nBehavior=Mass File Encryption\r\nFiles_Modified=1423\r\nExtension=.locked\r\nCPU=98%",
+        "threat": "\nThreat Type        : Ransomware\n\nConfidence Score   : 90%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Mass file encryption detected\n\u2022 Suspicious encryption process observed\n\u2022 High CPU utilization\n\u2022 Large number of files modified\n",
+        "severity": "\nOverall Severity : \ud83d\udd34 Critical\n\nRisk Score       : 80/100\n\nReasons\n\n\u2022 Ransomware behaviour detected\n\u2022 High CPU usage\n\u2022 Mass file modification\n",
+        "response": "RECOMMENDED RESPONSE\n\n\u2713 Immediately isolate Unknown from the corporate network.\n\u2713 Terminate process Unknown.\n\u2713 Disable account Unknown.\n\u2713 Block source IP Unknown.\n\u2713 Preserve RAM and disk image for forensic investigation.\n\u2713 Collect Indicators of Compromise (IoCs).\n\u2713 Scan neighbouring endpoints using EDR.\n\u2713 Restore encrypted files from secure backups.\n\u2713 Notify SOC Manager and Incident Response Team.",
+        "timestamp": "2026-07-14 12:00:29"
+    },
+    {
+        "log": "Timestamp=2026-07-14 12:48:13\r\nHostname=ENG-PC-04\r\nUser=David\r\nSource_IP=91.22.44.10\r\nDestination_IP=10.10.2.44\r\nProcess=svhost.exe\r\nBehavior=Trojan Activity\r\nCPU=94%",
+        "threat": "\nThreat Type        : Malware Infection\n\nConfidence Score   : 65%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 Known malware keyword detected\n\u2022 High CPU utilization\n",
+        "severity": "\nOverall Severity : \ud83d\udfe1 Medium\n\nRisk Score       : 50/100\n\nReasons\n\n\u2022 Trojan activity\n\u2022 High CPU usage\n",
+        "response": "RECOMMENDED RESPONSE\n\n\u2713 Disconnect affected endpoint.\n\u2713 Perform full antivirus scan.\n\u2713 Remove malicious binaries.\n\u2713 Review persistence mechanisms.\n\u2713 Monitor network communications.",
+        "timestamp": "2026-07-14 12:00:34"
+    },
+    {
+        "log": "Timestamp=2026-07-14 14:01:12\r\nHostname=LAPTOP-22\r\nUser=John\r\nSource_IP=10.10.1.15\r\nDestination_IP=10.10.1.20\r\nProcess=chrome.exe\r\nBehavior=Normal Browsing\r\nCPU=18%",
+        "threat": "\nThreat Type        : Unknown Activity\n\nConfidence Score   : 10%\n\nMITRE ATT&CK\n\nT1486 (Simulated)\n\nEvidence\n\n\u2022 No known attack pattern matched\n",
+        "severity": "\nOverall Severity : \ud83d\udfe2 Low\n\nRisk Score       : 0/100\n\nReasons\n\n\u2022 \n",
+        "response": "RECOMMENDED RESPONSE\n\n\u2713 Continue monitoring.\n\u2713 Review SIEM alerts.\n\u2713 No immediate containment required.",
+        "timestamp": "2026-07-14 12:01:01"
+    }
+]
