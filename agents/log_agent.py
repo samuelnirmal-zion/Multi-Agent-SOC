@@ -6,18 +6,15 @@ def analyze_log(log):
     data = parse_log(log)
 
     return f"""
-EVENT DETAILS
+Event Summary
 
 Timestamp          : {data['timestamp']}
 Hostname           : {data['hostname']}
-Username           : {data['user']}
+User               : {data['user']}
 Source IP          : {data['source_ip']}
 Destination IP     : {data['destination_ip']}
 Process            : {data['process']}
-Event ID           : {data['event_id']}
-Port               : {data['port']}
-Behavior           : {data['behavior']}
-Files Modified     : {data['files_modified']}
-File Extension     : {data['extension']}
+Behaviour          : {data['behavior']}
 CPU Usage          : {data['cpu']}
+Files Modified     : {data['files_modified']}
 """

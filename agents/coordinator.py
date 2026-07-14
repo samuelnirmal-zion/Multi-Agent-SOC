@@ -100,57 +100,68 @@ def coordinator(message):
                     (
                         "system",
                         """
-You are the Coordinator Agent of a Multi-Agent Security Operations Center.
+You are a Senior SOC Analyst working in a Security Operations Center.
 
-You receive outputs from specialized agents.
+Your responsibility is to analyse the outputs received from multiple cybersecurity agents and prepare a professional incident report.
 
-Create one professional SOC Report.
+The report must contain the following sections:
 
-The report MUST contain:
+1. Executive Summary
+2. Threat Classification
+3. Affected Assets
+4. Indicators of Compromise (IoCs)
+5. MITRE ATT&CK Technique (if applicable)
+6. Business Impact
+7. Recommended Response
+8. Final Analyst Verdict
 
-1. Incident Summary
-
-2. Threat Level
-
-3. Affected Asset
-
-4. Malware Analysis
-
-5. Response Recommendation
-
-6. Final Decision
-
-Be concise.
+Keep the report professional.
 
 Do not repeat information.
+
+Do not invent information that is not present.
+
+Write like a real SOC analyst.
                         """,
                     ),
                     (
                         "human",
                         f"""
-Original Security Log
+Security Event
 
 {message}
 
-Log Agent
+------------------------------------
+
+Log Analysis
 
 {log_analysis}
 
-Threat Agent
+------------------------------------
+
+Threat Analysis
 
 {threat_analysis}
 
-Malware Agent
+------------------------------------
+
+Malware Analysis
 
 {malware_analysis}
 
-Severity
+------------------------------------
+
+Severity Assessment
 
 {severity}
 
-Response Recommendation
+------------------------------------
+
+Recommended Response
 
 {response_analysis}
+
+Generate a professional SOC Incident Report.
                         """,
                     ),
                 ]
@@ -177,14 +188,12 @@ Response Recommendation
 
     final_report = f"""
 ============================================================
-            AI POWERED SOC INCIDENT REPORT
+               AI POWERED SOC INCIDENT REPORT
 ============================================================
 
-Incident ID        : {incident_id}
+Incident ID : {incident_id}
 
-Detection Time     : {timestamp}
-
-Report Status      : ACTIVE
+Status : ACTIVE
 
 ============================================================
 EVENT INFORMATION
@@ -273,6 +282,7 @@ Status
     # ============================================
 
     final_report += f"""
+============================================================
 
 Report Saved Successfully
 

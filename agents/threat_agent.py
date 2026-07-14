@@ -5,134 +5,82 @@ def analyze_threat(log):
 
     data = parse_log(log)
 
-    score = 0
-    evidence = []
-    threat_type = "Unknown Activity"
-
     text = log.lower()
 
-    # -----------------------------
-    # Ransomware Detection
-    # -----------------------------
     if (
-        "encrypt" in text
+        "ransomware" in text
+        or "encrypt" in text
         or ".locked" in text
-        or "ransomware" in text
-        or "mass file encryption" in text
     ):
-        threat_type = "Ransomware"
 
-        score += 50
+        return f"""
+Threat Classification
 
-        evidence.append("Mass file encryption detected")
-        evidence.append("Suspicious encryption process observed")
+Attack Type : Ransomware
 
-    # -----------------------------
-    # Brute Force
-    # -----------------------------
+Confidence : 98%
+
+Affected Host : {data['hostname']}
+
+MITRE ATT&CK : T1486 (Data Encrypted for Impact)
+"""
+
     elif (
         "failed login" in text
-        or "multiple failed login" in text
-        or "authentication failed" in text
+        or "authentication" in text
     ):
 
-        threat_type = "Brute Force Attack"
+        return f"""
+Threat Classification
 
-        score += 40
+Attack Type : Brute Force
 
-        evidence.append("Multiple authentication failures")
+Confidence : 94%
 
-    # -----------------------------
-    # Phishing
-    # -----------------------------
+Target User : {data['user']}
+
+MITRE ATT&CK : T1110 (Brute Force)
+"""
+
+    elif "phishing" in text:
+
+        return f"""
+Threat Classification
+
+Attack Type : Phishing
+
+Confidence : 92%
+
+Target User : {data['user']}
+
+MITRE ATT&CK : T1566 (Phishing)
+"""
+
     elif (
-        "phishing" in text
-        or "fake login" in text
-        or "malicious email" in text
-    ):
-
-        threat_type = "Phishing Attempt"
-
-        score += 35
-
-        evidence.append("Suspicious email activity detected")
-
-    # -----------------------------
-    # Malware
-    # -----------------------------
-    elif (
-        "malware" in text
-        or "trojan" in text
+        "trojan" in text
         or "virus" in text
         or "worm" in text
+        or "malware" in text
     ):
 
-        threat_type = "Malware Infection"
+        return f"""
+Threat Classification
 
-        score += 45
+Attack Type : Malware
 
-        evidence.append("Known malware keyword detected")
+Confidence : 90%
+
+Affected Host : {data['hostname']}
+
+MITRE ATT&CK : T1204 (User Execution)
+"""
 
     else:
 
-        score = 10
+        return """
+Threat Classification
 
-        evidence.append("No known attack pattern matched")
+No Known Threat Detected
 
-    # -----------------------------
-    # CPU
-    # -----------------------------
-
-    if data["cpu"] != "Unknown":
-
-        try:
-
-            cpu = int(
-                data["cpu"].replace("%", "")
-            )
-
-            if cpu >= 90:
-
-                score += 20
-
-                evidence.append("High CPU utilization")
-
-        except:
-
-            pass
-
-    # -----------------------------
-    # Files Modified
-    # -----------------------------
-
-    if data["files_modified"] != "Unknown":
-
-        try:
-
-            files = int(data["files_modified"])
-
-            if files > 500:
-
-                score += 20
-
-                evidence.append("Large number of files modified")
-
-        except:
-
-            pass
-
-    confidence = min(score, 100)
-
-    return f"""
-Threat Type        : {threat_type}
-
-Confidence Score   : {confidence}%
-
-MITRE ATT&CK
-
-T1486 (Simulated)
-
-Evidence
-
-• {'\n• '.join(evidence)}
+Confidence : 15%
 """
