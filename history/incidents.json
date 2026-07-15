@@ -187,5 +187,33 @@
         "severity": "\nOverall Severity : \ud83d\udfe2 Low\n\nRisk Score       : 0/100\n\nReasons\n\n\u2022 \n",
         "response": "RECOMMENDED RESPONSE\n\n\u2713 Continue monitoring.\n\u2713 Review SIEM alerts.\n\u2713 No immediate containment required.",
         "timestamp": "2026-07-14 12:01:01"
+    },
+    {
+        "log": "Timestamp=2026-07-14 14:01:12\r\nHostname=LAPTOP-22\r\nUser=John\r\nSource_IP=10.10.1.15\r\nDestination_IP=10.10.1.20\r\nProcess=chrome.exe\r\nBehavior=Normal Browsing\r\nCPU=18%",
+        "threat": "\nThreat Classification\n\nNo Known Threat Detected\n\nConfidence : 15%\n",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-14 12:35:46"
+    },
+    {
+        "log": "Timestamp=2026-07-14 14:01:12\r\nHostname=LAPTOP-22\r\nUser=John\r\nSource_IP=10.10.1.15\r\nDestination_IP=10.10.1.20\r\nProcess=chrome.exe\r\nBehavior=Normal Browsing\r\nCPU=18%",
+        "threat": "\nThreat Classification\n\nNo Known Threat Detected\n\nConfidence : 15%\n",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-14 12:36:00"
+    },
+    {
+        "log": "Timestamp=2026-07-14 14:01:12\r\nHostname=LAPTOP-22\r\nUser=John\r\nSource_IP=10.10.1.15\r\nDestination_IP=10.10.1.20\r\nProcess=chrome.exe\r\nBehavior=Normal Browsing\r\nCPU=18%",
+        "threat": "\nThreat Classification\n\nNo Known Threat Detected\n\nConfidence : 15%\n",
+        "severity": "",
+        "response": "",
+        "timestamp": "2026-07-14 16:53:39"
+    },
+    {
+        "log": "Timestamp=2026-07-14 12:48:13\r\nHostname=ENG-PC-04\r\nUser=David\r\nSource_IP=91.22.44.10\r\nDestination_IP=10.10.2.44\r\nProcess=svhost.exe\r\nBehavior=Trojan Activity\r\nCPU=94% \t",
+        "threat": "\nThreat Classification\n\nAttack Type : Malware\n\nConfidence : 90%\n\nAffected Host : ENG-PC-04\n\nMITRE ATT&CK : T1204 (User Execution)\n",
+        "severity": "\nOverall Severity : \ud83d\udfe1 Medium\n\nRisk Score : 50/100\n\nRisk Factors\n\n\u2022 Trojan activity detected\n\u2022 High CPU utilisation\n",
+        "response": "RECOMMENDED RESPONSE\n\n\u2713 Disconnect affected endpoint\n\u2713 Run endpoint antivirus scan\n\u2713 Remove malicious binaries\n\u2713 Review persistence mechanisms\n\u2713 Monitor outbound traffic\n",
+        "timestamp": "2026-07-14 17:19:22"
     }
 ]

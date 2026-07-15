@@ -107,8 +107,9 @@ def response_node(state: SOCState):
     """
 
     threat_result = state["threat"]
+    log = state["log"]
 
-    result = response_action(threat_result)
+    result = response_action(threat_result, log)
 
     state["response"] = result
 

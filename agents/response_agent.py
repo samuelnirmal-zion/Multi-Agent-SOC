@@ -17,13 +17,13 @@ def response_action(threat_result, log):
 
         actions = [
 
-            f"Isolate endpoint {data['hostname']}",
+            "Isolate endpoint {data['hostname']}",
 
-            f"Terminate process {data['process']}",
+            "Terminate process {data['process']}",
 
-            f"Disable account {data['user']}",
+            "Disable account {data['user']}",
 
-            f"Block source IP {data['source_ip']}",
+            "Block source IP {data['source_ip']}",
 
             "Preserve RAM for forensic investigation",
 
@@ -45,9 +45,9 @@ def response_action(threat_result, log):
 
         actions = [
 
-            f"Block source IP {data['source_ip']}",
+            "Block source IP {data['source_ip']}",
 
-            f"Temporarily disable account {data['user']}",
+            "Temporarily disable account {data['user']}",
 
             "Force password reset",
 

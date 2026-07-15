@@ -176,7 +176,8 @@ Generate a professional SOC Incident Report.
         except Exception:
 
             ai_response = _build_fallback_response(message)
-                incident = parse_log(message)
+
+    incident = parse_log(message)
 
     incident_id = "SOC-" + uuid4().hex[:8].upper()
 
